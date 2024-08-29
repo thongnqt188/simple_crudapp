@@ -104,7 +104,7 @@ class UserController extends Controller
             $file = $request->file('image');
             $extension = $file->getClientOriginalExtension(); //lấy đuôi file .jpg, .png,....
             $filename = time() . '.' . $extension;
-            $file->move('uploads/users/', $filename);  //upload lên uploads/user
+            $file->move('uploads/users/', $filename);
             $user->image = $filename;
         }
         $user->update();
